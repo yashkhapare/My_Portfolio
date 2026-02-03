@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Yash | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">Yash.dev</div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="/templates/project.html">Projects</a>
+        <a href="/templates/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero2">
+      <div class="hero-container">
+        <div class="hero-left2">
+          <p class="tag2">WELCOME TO MY PORTFOLIO</p>
+
+          <h1>Hello, I’m <br /><span class="name2">Yash</span></h1>
+
+          <h2 class="subtitle2">Full-Stack Python Developer</h2>
+
+          <p class="intro2">
+            I build clean, scalable, and user-friendly web applications using
+            Python and modern web technologies, with a strong focus on
+            performance and maintainability.
+          </p>
+
+          <div class="social-media2">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/yashkhapare"><i class="fa-brands fa-github"></i></a>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="/assets/resume/Yash_Resume.pdf" class="download-btn2">
+              Download CV
+            </a>
+            <a href="/templates/project.html" class="secondary-btn2">
+              View Projects
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right2">
+          <div class="photo-ring">
+            <img src="/assets/img/yash_1.png" alt="Yash Photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-split fade-up" id="about">
+      <div class="about-image">
+        <img src="/assets/img/aboutpic.jpeg" alt="Yash" />
+      </div>
+
+      <div class="about-content">
+        <h2>About <span>Me</span></h2>
+
+        <p class="about-text">
+          I'm <strong>Yash</strong>, a passionate
+          <strong>Full Stack Python Developer</strong> with hands-on experience
+          in Django, Flask, frontend technologies, and IoT-based projects. I
+          enjoy building reliable applications that combine clean backend logic
+          with intuitive user interfaces.
+        </p>
+
+        <p class="about-text muted">
+          I am always eager to learn new technologies and apply them to build
+          meaningful and functional products.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <i class="fa-brands fa-python"></i>
+          <h3>Python</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-cubes"></i>
+          <h3>Django</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-flask"></i>
+          <h3>Flask</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-js"></i>
+          <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-html5"></i>
+          <h3>HTML & CSS</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-database"></i>
+          <h3>SQLite</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>Arduino / IoT</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="latest-projects">
+      <h2 class="project-title">Latest <span>Projects</span></h2>
+
+      <div class="projects-grid">
+        <!-- project 1 -->
+
+        <div class="project-box">
+          <img
+            src="/assets/project_ss/music_downloader/main.png"
+            alt="Music Downloader"
+          />
+          <div class="overlay">
+            <h3>Music Downloader</h3>
+            <p>API based audio downloader</p>
+            <a href="/templates/project_file/music_downloader.html">↗</a>
+          </div>
+        </div>
+
+        <!-- project 2 -->
+
+        <div class="project-box">
+          <img
+            src="/assets/project_ss/snipptly/main_page.png"
+            alt="Snippetly"
+          />
+          <div class="overlay">
+            <h3>Snippetly</h3>
+            <p>Pastebin clone using Flask + SQLite</p>
+            <a href="/templates/project_file/snippetly.html">↗</a>
+          </div>
+        </div>
+
+        <!-- project 3 -->
+
+        <div class="project-box">
+          <img src="/assets/project_ss/iot/main.png" alt="IoT Project" />
+          <div class="overlay">
+            <h3>Industrial Tempreature Monitoring system</h3>
+            <p>Arduino-based industrial temperature monitor</p>
+            <a href="/templates/project_file/IOT.html">↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align: center">
+      <h2 class="section-title">Let’s <span>Work Together</span></h2>
+      <a href="/templates/contact.html" class="btn">Contact Me</a>
+    </section>
+
+    <footer class="site-footer">© 2025 Yash. All rights reserved.</footer>
+
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-up");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      fadeElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
