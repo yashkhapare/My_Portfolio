@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Latest Projects</title>
+
+<style>
+/* ===== ROOT COLORS ===== */
+:root {
+  --bg: #0A192F;
+  --card: #112240;
+  --accent: #FF6B35;
+  --muted: #8892B0;
+  --text: #E6EEF8;
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Inter, Poppins, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===============================
+   NAVBAR (MERGED & RESPONSIVE)
+================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 47, 0.9),
+    rgba(10, 25, 47, 0.6)
+  );
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  font-size: 18px;
+  margin-left: 30px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: var(--accent);
+}
+
+/* ===============================
+   NAVBAR – TABLETS
+================================ */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 24px;
+    height: 72px;
+  }
+
+  .navbar nav a {
+    font-size: 17px;
+    margin-left: 18px;
+  }
+}
+
+/* ===============================
+   NAVBAR – MOBILE
+================================ */
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .navbar nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .navbar nav a {
+    font-size: 15px;
+    margin: 6px 10px;
+  }
+}
+
+
+/* ===== SECTION ===== */
+section {
+  padding: 120px 6% 80px;
+  
+  margin: auto;
+}
+
+/* ===== TITLE ===== */
+.project-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+
+.project-title span {
+  color: var(--accent);
+}
+
+/* ===== GRID ===== */
+.projects-grid {
+  display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-box {
+  position: relative;
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* IMAGE */
+.project-box img {
+  width: 100%;
+  display: block;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-box:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,25,47,0.95),
+    rgba(10,25,47,0.35)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.project-box:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.overlay p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* LINK BUTTON */
+.overlay a {
+  width: 38px;
+  height: 38px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.overlay a:hover {
+  transform: scale(1.1);
+}
+
+.latest-projects {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Tablets */
+@media (max-width: 900px) {
+  
+
+  section {
+    padding-top: 110px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  section.latest-projects {
+    padding: 100px 16px 40px;
+  }
+
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-box img {
+    max-height: 200px;
+    height: auto;
+  }
+}
+
+
+
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+  <div class="logo">Yash.dev</div>
+  <nav>
+    <a href="/my.html">Home</a>
+    <a href="#" class="active">Projects</a>
+    <a href="/templates/contact.html">Contact</a>
+  </nav>
+</header>
+
+<section id="projects" class="latest-projects">
+  <h2 class="project-title">Latest <span>Projects</span></h2>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-box">
+      <img src="/assets/project_ss/music_downloader/main.png" alt="Project Title">
+
+      <div class="overlay">
+        <h3>Music downloader</h3>
+        <p>Flask-based online music search app</p>
+
+        <div style="display:grid;">
+          <a href="/templates/project_file/music_downloader.html" >↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-box">
+      <img src="/assets/project_ss/snipptly/main_page.png" alt="Project Title">
+
+      <div class="overlay">
+        <h3>Snippetly</h3>
+        <p>Secure code snippet sharing web app</p>
+
+        <div style="display:grid;">
+          <a href="/templates/project_file/snippetly.html" target="_self">↗</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+     <div class="project-box">
+      <img src="/assets/project_ss/iot/main.png" alt="Project Title">
+
+      <div class="overlay">
+        <h3>Industrial Tempreature Monitoring system</h3>
+        <p>Arduino-based industrial temperature monitor</p>
+
+        <div style="display:flex;">
+          <a href="/templates/project_file/IOT.html" >↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
